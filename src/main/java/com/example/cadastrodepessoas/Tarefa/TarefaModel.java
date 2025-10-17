@@ -1,10 +1,12 @@
 package com.example.cadastrodepessoas.Tarefa;
 
+import com.example.cadastrodepessoas.Funcionario.FuncionarioModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import java.time.LocalDate;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -20,6 +22,8 @@ public class TarefaModel {
     private LocalDate dataEntrega;
     private String descricao;
 
+    @ManyToMany(mappedBy = "tarefas")
+    private List<FuncionarioModel> funcionario;
 
 
 }
