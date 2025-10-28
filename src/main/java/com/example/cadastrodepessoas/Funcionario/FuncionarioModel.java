@@ -17,12 +17,19 @@ public class FuncionarioModel {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "funcionario_id")
     private long id;
+    @Column(name = "funcionario_nome")
     private String nome;
+    @Column(name = "funcionario_cargo")
     private String cargo;
+    @Column(name = "funcionario_dataNascimento")
     private LocalDate dataNascimento;
+    @Column(name = "funcionario_idade")
     private int idade;
+    @Column(name = "funcionario_cpf", unique = true)
     private String cpf;
+    @Column(name = "funcionario_telefone", unique = true)
     private String telefone;
 
     @ManyToMany(mappedBy = "tarefa")
